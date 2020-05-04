@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<script src = wsB.js></script>
+<html>
+<header><title>Solenoid Field Calculator</title></header>
+<style>
+    table { font-size: 4rem; font-family: "calibri"; background-color:rgb(255, 255, 255);   border-radius: 25px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 20px}
+    p { font-size: 1.5rem; font-family: "Times New Roman", "calibri";}
+    input { font-size: 3rem; width: 18rem; font-family: "calibri";}
+    button { font-size: 3rem; width: 42rem; font-family: "calibri";}
+    body {background: linear-gradient(to right, rgb(245, 245, 250), rgb(245, 245, 255));}
+</style>
+<body>
+    <!-- <p>Hello world</p> -->
+    <!-- <script language="javascript">
+        // Testing ///
+        // var name = "What is your name?<br>"
+        // document.write("Hi there!<br>");
+        // document.write(name);
+
+        // var a1 = 10e-3;
+        // var a2 = 52.5e-3;
+        // var b1 = -3e-3;
+        // var b2 = 3e-3;
+        // var current = 250;
+        // var turns = 660;
+        // var r = 0;
+        // var z = 0;
+        // End of Testing //
+        var B = WSB(a1,a2,b1,b2,r,z,current,turns);
+        document.write("Bz = ", B[0],"<br>","Br = ", B[1]);
+    </script> -->
+    <form name="MagnetDim">
+        <table border="0.1" align="center" cellspacing="1">
+           <tr>
+            <td>Input <i>a1</i> : </td>
+            <td><input type="number" id="a1" value="10"></td>
+            <td>[mm]</td>
+           </tr>
+           <tr>
+            <td>Input <i>a2</i> : </td>
+            <td><input type="number" id="a2" value="52.5"></td>
+            <td>[mm]</td>
+           </tr>
+           <tr>
+            <td>Input <i>b1</i> : </td>
+            <td><input type="number" id="b1" value="-3"></td>
+            <td>[mm]</td>
+           </tr>
+           <tr>
+            <td>Input <i>b2</i> : </td>
+            <td><input type="number" id="b2" value="3"></td>
+            <td>[mm]</td>
+           </tr>
+           <tr>
+            <td>Input <i>I</i> : </td>
+            <td><input type="number" id="I" value="250"></td>
+            <td>[A]</td>
+           </tr>
+           <tr>
+            <td>Input <i>n</i> : </td>
+            <td><input type="number" id="n" value="660"></td>
+            <td>[turns]</td>
+           </tr>
+           <tr>
+            <td>Input <i>R</i> : </td>
+            <td><input type="number" id="R" value="0"></td>
+            <td>[mm]</td>
+           </tr>
+           <tr>
+            <td>Input <i>Z</i> : </td>
+            <td><input type="number" id="Z" value="0"></td>
+            <td>[mm]</td>
+           </tr>
+           <tr>
+            <td colspan="3"><button type="button" id="testCalBtn" onclick = "var B = WSB(MagnetDim);alret(B);">CALCULATE</button></td>
+           </tr>
+           <tr>
+            <td>Output <i>Bz</i> : </td>
+            <td><input type="number" id="BzDisp" placeholder="[Calculate]"></td>
+            <td>[T]</td>
+           </tr>
+            <td>Output <i>Br</i> : </td>
+            <td><input type="number" id="BrDisp" placeholder="[Calculate]"></td>
+            <td>[T]</td>
+          </tr>
+        </table>
+        <p>:::Input definition:::</p>
+        <p>&emsp;a1 = inner radius of the solenoid coil.</p>
+        <p>&emsp;a2 = outer radius of the solenoid coil.</p>
+        <p>&emsp;b1 = bottom-most location of the solenoid coil.</p>
+        <p>&emsp;b2 = upper-most location of the solenoid coil.</p>
+        <p>&emsp;I = operation current of the solenoid coil.</p>
+        <p>&emsp;n = total number of turns in the solenoid coil.</p>
+        <p>&emsp;r = radial location of interested point.</p>
+        <p>&emsp;z = axial location of interested point.</p>
+        <p>:::Output definition:::</p>
+        <p>&emsp;Bz = axial field at the location.</p>
+        <p>&emsp;Br = radial field at the location.</p>
+        <p>:::Warnings:::</p>
+        <p>&emsp;There is no input parameter guard for now. Do not try to calculate with wrong input such as a2 &lt; a1 cases. </p>
+        <p>&emsp;Good luck with your magnet!</p>
+        <br><br><p style="text-align:center; font-style: italic; font-family: Times New Roman;">::::::Made by Wooseung Lee (wooseung@mit.edu)::::::</p>
+    </form> 
+</body>
+</html>
+
+<!-- 
+Copyright 2020 Wooseung Lee (wooseung@mit.edu)
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the "Software"),
+    to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense,
+    and/or sell copies of the Software, and to permit persons to whom the Software
+    is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+    OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
