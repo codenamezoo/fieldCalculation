@@ -1,0 +1,2 @@
+C:\Users\truth\source\repos\wsBCPP\Debug\wsBCPP.exe
+C:\Users\truth\source\repos\wsBCPP\Debug\wsBCPP.pdb
